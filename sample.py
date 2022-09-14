@@ -2,11 +2,11 @@ from bs4 import BeautifulSoup
 import requests
 from csv import writer
 
-url= "https://www.pararius.com/apartments/amsterdam?ac=1"
+url= "https://lnmtl.com/chapter/bringing-the-farm-to-live-in-another-world-chapter-1943"
 page = requests.get(url)
 
 soup = BeautifulSoup(page.content, 'html.parser')
-lists = soup.find_all('section', class_="listing-search-item")
+lists = soup.find_all('h3', class_="dashhead-title")
 
 with open('housing.csv', 'w', encoding='utf8', newline='') as f:
     thewriter = writer(f)
